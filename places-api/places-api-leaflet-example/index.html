@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Foursquare Places API Example </title>
+        
+        <!-- Icon in tab-->
+        <link rel="icon" type="image/png" href="imgs/favicon-16x16.png">
+
+        <!--Jquery Library-->
+        <script src="js/jquery-3.6.0.min.js"></script>
+
+        <!-- Our local stylesheets and js -->
+        <link rel="stylesheet" href="css/main.css"/>
+        <script src="js/main.js"></script>
+              
+        <!-- Bootstrap css and js from the internet -->
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"/>
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>        
+   
+        <!-- Interactive Leaflet Map libs --> 
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
+        <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+    
+    </head>
+
+    <body>
+        <div class="container" id="header">
+            <h1>Foursquare Places API Example with Leaflet </h1>
+        </div>
+
+        <div class="container" id="bodyContent">
+            <div class="card">
+                <p>This example takes a query, near and category inputs to call Foursquare's Places API. The Places API returns Point of Interest (POI) data and populates the map on the page.</p>
+                <p>Check out <a href="https://developer.foursquare.com/docs/places-api-getting-started">Foursquare's Documentation</a> for  information on addtional inputs and uses of the Places API. </p>
+                <p> To use this example you must sign up for a developer account on <a href="https://foursquare.com/developers">foursquare.com</a> and generate an API key and plug it in to the "Authorization" fields in main.js</p>
+            </div>
+        </div>
+
+        <div class="container" >
+            <form id="the-form">
+                <label for="query">What: </label> <input name="query" type="text"/> 
+                <label for="state">Where: </label> <input name="near" type=""/>
+                <label for="categories">Categories: </label><select id="categories" name="categories">
+                    <option value="10000">Arts and Entertainment</option>
+                    <option value="11000">Business and Professional Services</option>
+                    <option value="12000">Community and Government</option>
+                    <option value="13000">Dining and Drinking</option>
+                    <option value="14000">Events</option>
+                    <option value="15000">Health and Medicine</option>
+                    <option value="16000">Landmarks and Outdoors</option>
+                    <option value="17000">Retail</option>
+                    <option value="18000">Sports and Recreation</option>
+                    <option value="19000">Travel and Transportation</option>
+                  </select>
+                <button type="button" id="submit-button" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+        <div class="contaianer" id="mapContainer">
+            <div id="map"></div>
+        </div>    
+
+        <div id="results"></div>
+    </body>
+</html>
