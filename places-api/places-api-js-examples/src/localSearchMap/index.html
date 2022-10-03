@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Places Explorer Map</title>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Copy the following css code inside this section to the CSS code snippet component in Readme -->
+    <style>
+      .explorer {
+        position: relative;
+      }
+
+      .explorer-map {
+        width: 100%;
+        height: 500px;
+        background-color: #f8f8f8;
+      }
+
+      .explorer--text {
+        font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica', 'Arial',
+          'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        color: #171417;
+      }
+
+      .explorer--secondary-text {
+        color: #959b9e;
+        font-size: 14px;
+      }
+
+      .explorer--bold {
+        font-weight: 500;
+      }
+
+      .explorer--background-icon {
+        background-size: 16px !important;
+        background-position-x: 16px !important;
+        background-position-y: 50% !important;
+        background-repeat: no-repeat !important;
+      }
+
+      @media only screen and (min-width: 640px) {
+        #explorer-search {
+          width: 400px !important;
+        }
+      }
+
+      #explorer-search {
+        box-sizing: border-box;
+        position: absolute;
+        top: 24px;
+        left: 24px;
+        padding: 8px 16px;
+        padding-left: 48px;
+        width: 85%;
+        height: 40px;
+        background-color: #ffffff;
+        border: 1px solid #e0ddde;
+        border-radius: 4px;
+        background-image: url('https://files.readme.io/1bc7c8b-searchIcon.svg');
+      }
+
+      #explorer-search:hover,
+      #explorer-search:focus {
+        outline: none;
+        border-color: #3333ff;
+      }
+
+      #explorer-dropdown {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 24px;
+        background-color: #ffffff;
+        border-radius: 4px;
+        border: 1px solid #f4f4f4;
+        width: 400px;
+        z-index: 1;
+      }
+
+      #explorer-suggestions {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        max-height: 300px;
+        overflow-y: scroll;
+      }
+
+      .explorer--dropdown-item:hover {
+        background-color: #f1f1f1;
+      }
+
+      .explorer--dropdown-item {
+        padding: 16px;
+        background: #ffffff;
+        box-shadow: inset 0px -1px 0px #f4f4f4;
+      }
+
+      .explorer--dropdown-item div {
+        pointer-events: none;
+      }
+
+      .explorer--copyright {
+        background: #faf8f8;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .explorer--error {
+        padding: 8px 16px;
+        padding-left: 48px;
+        background: #fcedec;
+        color: #980500;
+        border: 1px solid rgba(152, 5, 0, 0.3);
+        border-radius: 4px;
+        margin: 8px;
+        background-image: url('https://files.readme.io/62b6781-errorIcon.svg');
+      }
+
+      .mapboxgl-popup {
+        max-width: 290px !important;
+      }
+
+      .mapboxgl-popup-content {
+        padding: 0;
+        filter: drop-shadow(0 0 8px rgb(23 20 23 / 10%));
+        border-radius: 4px;
+        min-width: 290px;
+        min-height: 88px;
+      }
+
+      .explorer--popup {
+        display: flex;
+        flex-direction: row;
+        padding: 16px;
+      }
+
+      .explorer--popup-image {
+        width: 56px;
+        height: 56px;
+        margin: 0 !important;
+      }
+
+      .explorer--popup-description {
+        margin: 0 8px;
+        /* max-width: 160px; */
+      }
+
+      .explorer--popup-rating {
+        background: #389e45;
+        border-radius: 4px;
+        height: 24px;
+        min-width: 26px;
+        font-size: 12px;
+        color: #ffffff;
+        text-align: center;
+        margin-left: auto;
+      }
+    </style>
+    <!-- Copy the following html code to the HTML code snippet component in Readme -->
+    <div class="explorer">
+      <div id="map" class="explorer-map"></div>
+      <div class="explorer--text">
+        <input
+          type="text"
+          class="explorer--search explorer--background-icon explorer--text"
+          id="explorer-search"
+          placeholder="Search Foursquare Places"
+        />
+        <div id="explorer-dropdown">
+          <ul id="explorer-suggestions"></ul>
+          <div id="explorer-error" class="explorer--error explorer--background-icon">
+            Something went wrong. Please refresh and try again.
+          </div>
+          <div id="explorer-not-found" class="explorer--error explorer--background-icon"></div>
+          <div class="explorer--copyright">
+            <img src="https://files.readme.io/7835fdb-powerByFSQ.svg" alt="powered by foursquare" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      /* Note: Copy the Code inside this method to the JS Code Snippet section only */
+      function loadLocalMapSearchJs() {
+        mapboxgl.accessToken = 'MAPBOX_ACCESS_TOKEN';
+        const fsqAPIToken = 'FSQ_API_TOKEN';
+        let userLat = 40.7128;
+        let userLng = -74.006;
+        let sessionToken = generateRandomSessionToken();
+        const inputField = document.getElementById('explorer-search');
+        const dropDownField = document.getElementById('explorer-dropdown');
+        const ulField = document.getElementById('explorer-suggestions');
+        const errorField = document.getElementById('explorer-error');
+        const notFoundField = document.getElementById('explorer-not-found');
+
+        const onChangeAutoComplete = debounce(changeAutoComplete);
+        inputField.addEventListener('input', onChangeAutoComplete);
+        ulField.addEventListener('click', selectItem);
+
+        function success(pos) {
+          const { latitude, longitude } = pos.coords;
+          userLat = latitude;
+          userLng = longitude;
+          flyToLocation(userLat, userLng);
+        }
+
+        function logError(err) {
+          console.warn(`ERROR(${err.code}): ${err.message}`);
+        }
+
+        navigator.geolocation.getCurrentPosition(success, logError, {
+          enableHighAccuracy: true,
+          timeout: 5000,
+          maximumAge: 0,
+        });
+
+        const map = new mapboxgl.Map({
+          container: 'map',
+          style: 'mapbox://styles/mapbox/light-v10',
+          center: [userLng, userLat],
+          zoom: 12,
+        });
+
+        map.addControl(new mapboxgl.GeolocateControl());
+        map.addControl(new mapboxgl.NavigationControl());
+
+        let currentMarker;
+
+        /* Generate a random string with 32 characters.
+           Session Token is a user-generated token to identify a session for billing purposes. 
+           Learn more about session tokens.
+           https://docs.foursquare.com/reference/session-tokens
+        */
+        function generateRandomSessionToken(length = 32) {
+          let result = '';
+          const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+          for (let i = 0; i < length; i++) {
+            result += characters[Math.floor(Math.random() * characters.length)];
+          }
+          return result;
+        }
+
+        let isFetching = false;
+        async function changeAutoComplete({ target }) {
+          const { value: inputSearch = '' } = target;
+          ulField.innerHTML = '';
+          notFoundField.style.display = 'none';
+          errorField.style.display = 'none';
+          if (inputSearch.length && !isFetching) {
+            try {
+              isFetching = true;
+              const results = await autoComplete(inputSearch);
+              if (results && results.length) {
+                results.forEach((value) => {
+                  addItem(value);
+                });
+              } else {
+                notFoundField.innerHTML = `Foursquare can't
+                find ${inputSearch} in the search area. Try searching for a local point-of-interest and make sure your search is spelled correctly.
+                <a href="https://foursquare.com/add-place?ll=${userLat}%2C${userLng}&venuename=${inputSearch}"
+                  target="_blank" rel="noopener noreferrer">Don't see the place you're looking for?</a>.`;
+                notFoundField.style.display = 'block';
+              }
+            } catch (err) {
+              errorField.style.display = 'block';
+              logError(err);
+            } finally {
+              isFetching = false;
+              dropDownField.style.display = 'block';
+            }
+          } else {
+            dropDownField.style.display = 'none';
+          }
+        }
+
+        async function autoComplete(query) {
+          const { lng, lat } = map.getCenter();
+          userLat = lat;
+          userLng = lng;
+          try {
+            const searchParams = new URLSearchParams({
+              query,
+              types: 'place',
+              ll: `${userLat},${userLng}`,
+              radius: 50000,
+              session_token: sessionToken,
+            }).toString();
+            const searchResults = await fetch(
+              `https://api.foursquare.com/v3/autocomplete?${searchParams}`,
+              {
+                method: 'get',
+                headers: new Headers({
+                  Accept: 'application/json',
+                  Authorization: fsqAPIToken,
+                }),
+              }
+            );
+            const data = await searchResults.json();
+            return data.results;
+          } catch (error) {
+            throw error;
+          }
+        }
+
+        function addItem(value) {
+          const placeDetail = value[value.type];
+          if (!placeDetail || !placeDetail.geocodes || !placeDetail.geocodes.main) return;
+          const { latitude, longitude } = placeDetail.geocodes.main;
+          const fsqId = placeDetail.fsq_id;
+          const dataObject = JSON.stringify({ latitude, longitude, fsqId });
+          ulField.innerHTML += `<li class="explorer--dropdown-item" data-object='${dataObject}'>
+            <div>${highlightedNameElement(value.text)}</div>
+            <div class="explorer--secondary-text">${value.text.secondary}</div>
+          </li>`;
+        }
+
+        async function selectItem({ target }) {
+          if (target.tagName === 'LI') {
+            const valueObject = JSON.parse(target.dataset.object);
+            const { latitude, longitude, fsqId } = valueObject;
+            const placeDetail = await fetchPlacesDetails(fsqId);
+            addMarkerAndPopup(latitude, longitude, placeDetail);
+            flyToLocation(latitude, longitude);
+
+            // generate new session token after a complete search
+            sessionToken = generateRandomSessionToken();
+            const name = target.dataset.name;
+            inputField.value = target.children[0].textContent;
+            dropDownField.style.display = 'none';
+          }
+        }
+
+        async function fetchPlacesDetails(fsqId) {
+          try {
+            const searchParams = new URLSearchParams({
+              fields: 'fsq_id,name,geocodes,location,photos,rating',
+              session_token: sessionToken,
+            }).toString();
+            const results = await fetch(
+              `https://api.foursquare.com/v3/places/${fsqId}?${searchParams}`,
+              {
+                method: 'get',
+                headers: new Headers({
+                  Accept: 'application/json',
+                  Authorization: fsqAPIToken,
+                }),
+              }
+            );
+            const data = await results.json();
+            return data;
+          } catch (err) {
+            logError(err);
+          }
+        }
+
+        function createPopup(placeDetail) {
+          const { location = {}, name = '', photos = [], rating } = placeDetail;
+          let photoUrl = 'https://files.readme.io/c163d6e-placeholder.svg';
+          if (photos.length && photos[0]) {
+            photoUrl = `${photos[0].prefix}56${photos[0].suffix}`;
+          }
+          const popupHTML = `<div class="explorer--popup explorer--text">
+            <image class="explorer--popup-image" src="${photoUrl}" alt="photo of ${name}"/>
+            <div class="explorer--popup-description">
+              <div class="explorer--bold">${name}</div>
+              <div class="explorer--secondary-text">${location.address}</div>
+            </div>
+            ${rating ? `<div class="explorer--popup-rating">${rating}</div>` : `<div />`}
+          </div>`;
+
+          const markerHeight = 35;
+          const markerRadius = 14;
+          const linearOffset = 8;
+          const verticalOffset = 8;
+          const popupOffsets = {
+            top: [0, verticalOffset],
+            'top-left': [0, verticalOffset],
+            'top-right': [0, verticalOffset],
+            bottom: [0, -(markerHeight + verticalOffset)],
+            'bottom-left': [0, (markerHeight + verticalOffset - markerRadius + linearOffset) * -1],
+            'bottom-right': [0, (markerHeight + verticalOffset - markerRadius + linearOffset) * -1],
+            left: [markerRadius + linearOffset, (markerHeight - markerRadius) * -1],
+            right: [-(markerRadius + linearOffset), (markerHeight - markerRadius) * -1],
+          };
+          return new mapboxgl.Popup({
+            offset: popupOffsets,
+            closeButton: false,
+          }).setHTML(popupHTML);
+        }
+
+        function addMarkerAndPopup(lat, lng, placeDetail) {
+          if (currentMarker) currentMarker.remove();
+          currentMarker = new mapboxgl.Marker({
+            color: '#3333FF',
+          })
+            .setLngLat([lng, lat])
+            .setPopup(createPopup(placeDetail))
+            .addTo(map);
+
+          currentMarker.togglePopup();
+        }
+
+        function flyToLocation(lat, lng) {
+          map.flyTo({
+            center: [lng, lat],
+          });
+        }
+
+        function highlightedNameElement(textObject) {
+          if (!textObject) return '';
+          const { primary, highlight } = textObject;
+          if (highlight && highlight.length) {
+            let beginning = 0;
+            let hightligtedWords = '';
+            for (let i = 0; i < highlight.length; i++) {
+              const { start, length } = highlight[i];
+              hightligtedWords += primary.substr(beginning, start - beginning);
+              hightligtedWords += '<b>' + primary.substr(start, length) + '</b>';
+              beginning = start + length;
+            }
+            hightligtedWords += primary.substr(beginning);
+            return hightligtedWords;
+          }
+          return primary;
+        }
+
+        function debounce(func, timeout = 300) {
+          let timer;
+          return (...args) => {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+              func.apply(this, args);
+            }, timeout);
+          };
+        }
+      }
+
+      loadLocalMapSearchJs();
+    </script>
+  </body>
+</html>
