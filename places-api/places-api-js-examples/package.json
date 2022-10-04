@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "node-static": "^0.7.11"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "fixlint": "eslint --fix ."
+  },
+  "name": "placesexplorer",
+  "description": "Places Explorer Demo app lives in [Readme](https://readme.com/) as a custom page. The url is https://developer.foursquare.com/docs.",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {
+    "eslint": "^8.16.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.2"
+  },
+  "author": "developer-experience",
+  "license": "ISC"
+}
