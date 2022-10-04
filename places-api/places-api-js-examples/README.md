@@ -1,6 +1,6 @@
 # Places API JS Demo
 
-This is the source code for the Places API Demos. Check them out on https://developer.foursquare.com/docs/places-api-demosfo
+This is the source code for the Places API Demos. Check them out on https://developer.foursquare.com/docs/places-api-demos
 
 ## Develop
 
