@@ -1,0 +1,101 @@
+Brand,Store Number,Store Name,Ownership Type,Street Address,City,State/Province,Country,Postcode,Phone Number,Timezone,Longitude,Latitude
+Starbucks,15008-157047,San Isidro,Licensed,"Belgrano, 263 San Isidro",Buenos Aires,B,AR,B1642,,GMT-03:00 America/Argentina/Bu,-58.51,-34.47
+Starbucks,1271-136936,Unicenter Shopping,Licensed,Parana 3745,Martinez,B,AR,B1640FRD,4717-4898,GMT-03:00 America/Argentina/Bu,-58.52,-34.51
+Starbucks,15478-161685,Maipu,Licensed,"Av. Maipu 940, Vicente Lopez",Vicente Lopez,B,AR,B1638BEL,,GMT-03:00 America/Argentina/Bu,-58.47,-34.53
+Starbucks,15158-240092,Plaza Niteroi Relo,Company Owned,"Rua XV de Novembro, 8, 3o piso, Centro",Niteroi,RJ,BR,06454-000,(21) 3629-2116,GMT-03:00 America/Sao_Paulo,-43.12,-22.9
+Starbucks,24246-236684,Plaza Niteroi 2,Company Owned,"Rua XV de Novembro, 8 - Piso Terreo, L16, Shopping da Gavea",Niteroi,RJ,BR,,,GMT-03:00 America/Sao_Paulo,-43.12,-22.9
+Starbucks,16680-172329,Shopping da Gavea,Company Owned,"Rua Marques de Sao Vicente, 52, 1o piso, Gavea",Rio de Janeiro,RJ,BR,22451-060,(21) 2422-3744,GMT-03:00 America/Sao_Paulo,-43.23,-22.98
+Starbucks,25120-238328,Aeroporto Galeao Mezanino,Company Owned,"Av. Vinte de Janeiro, s/n - Mezanino, Ilha do Governador",Rio de Janeiro,RJ,BR,21941-570,,GMT-03:00 America/Sao_Paulo,-43.25,-22.81
+Starbucks,24957-239367,Assembleia x Carmo,Company Owned,"Rua do Carmo, 11",Rio de Janeiro,RJ,BR,,,GMT-03:00 America/Sao_Paulo,-43.18,-22.9
+Starbucks,17029-178774,Visconde de Piraja,Company Owned,"Rua Visconde de Piraja, 206, Loja A",Rio de Janeiro,RJ,BR,22410-000,(21) 2523-2661,GMT-03:00 America/Sao_Paulo,-43.2,-22.98
+Starbucks,26236-238690,Ataulfo de Paiva 313,Company Owned,"Avenida Ataulfo de Paiva, 313",Rio de Janeiro,RJ,BR,,,GMT-03:00 America/Sao_Paulo,-43.22,-22.98
+Starbucks,1616-129745,Shopping Rio Sul,Company Owned,"Avenida Laudo Sodre, 445 Loja 401, Parte D-11/11A, Botafogo Praia Shopping",Rio de Janeiro,RJ,BR,22290,(21) 3553-7676,GMT-03:00 America/Sao_Paulo,-43.18,-22.96
+Starbucks,15077-144229,Botafogo Praia Shopping,Company Owned,"Praia de Botafogo, 400 - Terceiro Piso, Botafogo",Rio de Janeiro,RJ,BR,22250-040,55 21 3171-9622,GMT-03:00 America/Sao_Paulo,-43.18,-22.95
+Starbucks,17622-182367,Shopping Tijuca,Company Owned,"Avenida Maracana, 987, Ioja 3020, Barra Shopping",Rio de Janeiro,RJ,BR,20511-000,(21) 2568-6228,GMT-03:00 America/Sao_Paulo,-43.24,-22.92
+Starbucks,27154-153758,New York City Center,Company Owned,"Avenida das Americas 5000, Nivel Terreo, Ioja 111",Rio de Janeiro,RJ,BR,22640-102,(21) 2432-4763,GMT-03:00 America/Sao_Paulo,-43.36,-23
+Starbucks,17032-178778,Norte Shopping,Company Owned,"Avenida Dom Helder Camara, 5474, 2o Piso, Cachambi",Rio de Janeiro,RJ,BR,20771-004,,GMT-03:00 America/Sao_Paulo,-43.28,-22.89
+Starbucks,21347-211845,Shopping Nova America 2,Company Owned,"Av. Pastor Martin Luther King Jr, 126, L, Loja 509",Rio de Janeiro,RJ,BR,,,GMT-03:00 America/Sao_Paulo,-43.27,-22.88
+Starbucks,16262-168204,Goncalves Dias,Company Owned,"Rua Goncalves Dias, 51, Loja A",Rio de Janeiro,RJ,BR,20050-030,(21) 3178-2048,GMT-03:00 America/Sao_Paulo,-43.18,-22.9
+Starbucks,17575-183485,Cinema Odeon,Company Owned,Praca Floriano 7 - Centro,Rio de Janeiro,RJ,BR,20031-050,,GMT-03:00 America/Sao_Paulo,-43.18,-22.91
+Starbucks,23181-228184,Miguel Couto,Company Owned,"Rua Miguel Couto, 7, Centro, Edificio Argentina",Rio de Janeiro,RJ,BR,,,GMT-03:00 America/Sao_Paulo,-43.18,-22.9
+Starbucks,16511-172333,Edificio Argentina,Company Owned,"Praia de Botafogo, 228, loja 120, Shopping Via Parque",Rio de Janeiro,RJ,BR,22250-040,(21) 2551-0599,GMT-03:00 America/Sao_Paulo,-43.18,-22.94
+Starbucks,16512-172326,Shopping Via Parque,Company Owned,"Av. Ayrton Senna, 3000, Pavimento 2, Barra da Tijuca",Rio de Janeiro,RJ,BR,22775-003,(21) 3329-6170,GMT-03:00 America/Sao_Paulo,-43.36,-22.98
+Starbucks,1597-144232,Downtown Shopping,Company Owned,"Av. das Americas, 500, Barra da Tijuca",Rio de Janeiro,RJ,BR,22640-100,(21) 3553-6869,GMT-03:00 America/Sao_Paulo,-43.32,-23
+Starbucks,19039-198109,Nossa Senhora de Copacabana,Company Owned,"Av. Nossa Senhora de Copacabana, 1058, loja B",Rio de Janeiro,RJ,BR,22060-002,,GMT-03:00 America/Sao_Paulo,-43.19,-22.98
+Starbucks,15072-205624,Shopping Leblon Kiosk,Company Owned,"Avenida Afranio de Melo Franco, 290",Rio de Janeiro,RJ,BR,22430-060,,GMT-03:00 America/Sao_Paulo,-43.22,-22.98
+Starbucks,21722-214113,Barra Shopping 3,Company Owned,"Avenida das Americas, 4666",Rio de Janeiro,RJ,BR,,,GMT-03:00 America/Sao_Paulo,-43.36,-23
+Starbucks,20361-204804,Shopping Plaza Sul,Company Owned,"Praça Leonor Kaupa, 100",Atrium Térreo,SP,BR,,,GMT-03:00 America/Sao_Paulo,-46.63,-23.62
+Starbucks,1620-137556,Shopping Tambore,Company Owned,"Avenida Piracema, 669, Primeiro Piso",Barueri,SP,BR,06460-030,(11) 4193-5020,GMT-03:00 America/Sao_Paulo,-46.83,-23.5
+Starbucks,23537-230924,Bauru Shopping,Company Owned,"Rua Henrique Savi, 1555, UN 2A-01, Vila Nova Cidade Universitaria, Shopping Dom Pedro",Bauru,SP,BR,17011-900,,GMT-03:00 America/Sao_Paulo,-49.05,-22.34
+Starbucks,15073-141445,Parque D. Pedro Shopping,Company Owned,"Av. Guilherme Campos, 500, Jd. Santa Genebra",Campinas,SP,BR,13087-901,55 19 3756-9805,GMT-03:00 America/Sao_Paulo,-47.06,-22.85
+Starbucks,22630-222405,Campinas Shopping,Company Owned,"Rua Jacy Teixeira Camargo, 940, Terreo, Jd. do Lago",Campinas,SP,BR,,,GMT-03:00 America/Sao_Paulo,-47.08,-22.93
+Starbucks,22049-217325,Aer. Intl. Viracopos Desembarque,Company Owned,"Rodovia Santos Dumont, km 66, Desembarque",Campinas,SP,BR,,,GMT-03:00 America/Sao_Paulo,-47.14,-23.01
+Starbucks,22050-217324,Aer. Intl. Viracopos Embarque,Company Owned,"Rodovia Santos Dumont, km 66, Embarque",Campinas,SP,BR,,,GMT-03:00 America/Sao_Paulo,-47.15,-23.01
+Starbucks,15075-132765,Cambui,Company Owned,"Rua: Coronel Quirino, 1067, Shopping Iguatemi",Campinas,SP,BR,13025-002,55 19 3325-7429,GMT-03:00 America/Sao_Paulo,-47.05,-22.9
+Starbucks,15088-132764,Shopping Iguatemi Campinas,Company Owned,"Av. Iguatemi, 777 2 piso, lojas 04-01-A-SUC-D, Parte SUCD4",Campinas,SP,BR,13092-902,55 19 3294-9339,GMT-03:00 America/Sao_Paulo,-47.03,-22.89
+Starbucks,16820-172334,Galleria Shopping,Company Owned,"Rodovia Dom Pedro l, KM 131,5, 2o Piso, Jardim Nilopolis, Guarulhos International Airport",Campinas,SP,BR,13091-901,,GMT-03:00 America/Sao_Paulo,-47.02,-22.86
+Starbucks,21346-210669,Aero Intl GRU TermII Mezzanine,Company Owned,"Rodovia Helio Smidt, s/n, Terminal 2, Mezanino - Cumbica",Guarulhos,SP,BR,,,GMT-03:00 America/Sao_Paulo,-46.49,-23.43
+Starbucks,21404-212164,Aero Guarulhos Term II Sup Finger,Company Owned,"Rodovia Helio Smidt, s/n, Terminal 2, Embarque Restrito - Cumbica, Guarulhos International Airport",Guarulhos,SP,BR,,,GMT-03:00 America/Sao_Paulo,-46.49,-23.43
+Starbucks,22074-252023,Aeroporto Intl Guarulhos III,Company Owned,"Rodovia Helio Smidt, s/n, Terminal 3, Atrium - Cumbica",Guarulhos,SP,BR,,,GMT-03:00 America/Sao_Paulo,-46.48,-23.43
+Starbucks,21240-209666,Shopping Intl de Guarulhos Kiosk,Company Owned,"Rodovia Presidente Dutra, Saida 225, QS-10, Itapegica",Guarulhos,SP,BR,,,GMT-03:00 America/Sao_Paulo,-46.55,-23.49
+Starbucks,23069-227505,Parque Shopping Maia B,Company Owned,"Rua Bartholomeu de Carlos, 230, Piso 2, Guarulhos International Airport",Guarulhos,SP,BR,,,GMT-03:00 America/Sao_Paulo,-46.54,-23.44
+Starbucks,21349-210668,Aero Intl GRU TermII Praca,Company Owned,"Rod. Helio Smidt, s/n, Terminal 2 - Prac, Cumbica",Guarulhos,SP,BR,,,GMT-03:00 America/Sao_Paulo,-46.48,-23.43
+Starbucks,22886-225568,Shopping Piracicaba,Company Owned,"Avenida Limeira, 722, Piso Terreo, L1, Vila Areao",Piracicaba,SP,BR,,,GMT-03:00 America/Sao_Paulo,-47.65,-22.7
+Starbucks,20462-205664,Iguatemi Ribeirao Preto,Company Owned,"Av. Luiz Eduardo de Toledo Prado, 900, Pav. Superior - Vila do Golf",Ribeirao Preto,SP,BR,,,GMT-03:00 America/Sao_Paulo,-47.87,-21.18
+Starbucks,21496-211625,Ribeirao Shopping Store 2,Company Owned,"Av. Cel. Fernando Ferreira Leite, 1540, LUC214, Nivel California",Ribeirao Preto,SP,BR,14026-900,,GMT-03:00 America/Sao_Paulo,-47.82,-21.21
+Starbucks,19113-196825,Ribeirao Shop Quiosque Expansao C&C,Company Owned,"Av. Cel. Fernando Ferreira Leite, 1540, Pavimento superior - quiosque",Ribeirao Preto,SP,BR,14026-090,,GMT-03:00 America/Sao_Paulo,-47.81,-21.21
+Starbucks,16179-165745,Shopping ABC,Company Owned,"Av. Pereira Barreto, 42, Loja 411B, Piso P2",Santo Andre,SP,BR,09190-900,4468-1643,GMT-03:00 America/Sao_Paulo,-46.53,-23.67
+Starbucks,23697-232164,Praiamar Shopping,Company Owned,"Rua Alexandre Martins, 80, SUC 191",Santos,SP,BR,11025-200,,GMT-03:00 America/Sao_Paulo,-46.31,-23.98
+Starbucks,18892-196485,Sao Bernado Plaza Shopping,Company Owned,"Av. Rotary, 624, Piso L1, Ferrazopolis, Shopping Metropole",Sao Bernardo do Campo,SP,BR,,,GMT-03:00 America/Sao_Paulo,-46.54,-23.73
+Starbucks,21501-211525,Shopping Metropole  Saraiva,Company Owned,"Praca Samuel Sabatini, 200, Centro",Sao Bernardo do Campo,SP,BR,,,GMT-03:00 America/Sao_Paulo,-46.55,-23.69
+Starbucks,16270-153754,Park Shopping São Caetano,Company Owned,"Alameda Terracota 545 Park Shopping, Sao Caetano, Loja (LUC) 2001",Sao Caetano,SP,BR,09581-680,(11) 4225- 1131,GMT-03:00 America/Sao_Paulo,-46.58,-23.63
+Starbucks,19116-198104,Colinas Shopping,Company Owned,"Avenida Sao Joao, 2200, Piso Superior, Jardim das Colinas",Sao Jose do Campos,SP,BR,12242-000,,GMT-03:00 America/Sao_Paulo,-45.89,-23.19
+Starbucks,19036-198105,Center Vale Shopping,Company Owned,"Av. Dep. Benedito Matarazzo, 9403, Piso, Jardim Oswaldo Cruz",Sao Jose do Campos,SP,BR,12215-900,,GMT-03:00 America/Sao_Paulo,-45.88,-23.2
+Starbucks,19154-196844,Rio Preto Shopping,Company Owned,"Av. Brigadeiro Faria Lima, 6363",Sao Jose do Rio Preto,SP,BR,15090-000,,GMT-03:00 America/Sao_Paulo,-49.4,-20.84
+Starbucks,22625-221985,Iguatemi Rio Preto,Company Owned,"Av. Juscelino Kubitschek de Oliveira,, 5000 - Terreo - Iguatemi",Sao Jose do Rio Preto,SP,BR,15093-340,,GMT-03:00 America/Sao_Paulo,-49.39,-20.84
+Starbucks,22787-224488,Vale Sul 2,Company Owned,"Avenida Andromeda, 227, LUC 117",Sao Jose dos Campos,SP,BR,,,GMT-03:00 America/Sao_Paulo,-45.89,-23.22
+Starbucks,24812-236264,Hospital Beneficencia Portuguesa,Company Owned,"Rua Maestro Cardim, 769",Sao Paulo,SP,BR,,,GMT-03:00 America/Sao_Paulo,-46.64,-23.57
+Starbucks,24953-238607,Aeroporto de Congonhas Cafe,Company Owned,"Av. Washington Luis, s/n, Sagua Central, Vila Congonhas, Shopping Center 3",Sao Paulo,SP,BR,,,GMT-03:00 America/Sao_Paulo,-46.66,-23.63
+Starbucks,15083-119364,Shopping Center 3,Company Owned,"Av. Paulista, 2.064, Piso Augusta Lojas A-1,A-2,A-49",Sao Paulo,SP,BR,01448-900,55 11 3171-1266,GMT-03:00 America/Sao_Paulo,-46.66,-23.56
+Starbucks,25258-218466,CCP Shopping Cidade Sao Paulo,Company Owned,"Avenida Paulista, 1203",Sao Paulo,SP,BR,,,GMT-03:00 America/Sao_Paulo,-46.65,-23.56
+Starbucks,16828-174131,"Pavao, 667",Company Owned,"Av. Pavao, 667",Sao Paulo,SP,BR,01413-000,(11) 5049-3151,GMT-03:00 America/Sao_Paulo,-46.67,-23.61
+Starbucks,26526-244252,Metro Santa Cruz Store 2,Company Owned,"R. Domingos de Morais, 2564, Piso Terreo, Vila Mariana",Sao Paulo,SP,BR,04036-100,,GMT-03:00 America/Sao_Paulo,-46.64,-23.6
+Starbucks,13018-155344,Haddock Lobo,Company Owned,"Rua Haddock Lobo, 608, Cerqueira Cesar",Sao Paulo,SP,BR,01414-000,(11) 3083-6101,GMT-03:00 America/Sao_Paulo,-46.66,-23.56
+Starbucks,17030-178614,Shopping Metrô Boulevard Tatuapé,Company Owned,"Rua Goncalves Crespo, 78, 3 Pavimento,, Loja 432",Sao Paulo,SP,BR,03066-030,(11) 2092-5429,GMT-03:00 America/Sao_Paulo,-46.58,-23.54
+Starbucks,17076-174965,Shopping Metro Tucuruvi,Company Owned,"Av. Dr. Antonio Maria de Laet, 566, 2o Piso - Tucuruvi",Sao Paulo,SP,BR,02240-000,,GMT-03:00 America/Sao_Paulo,-46.6,-23.48
+Starbucks,22747-223964,Paulista 2026,Company Owned,"Avenida Paulista, 2026",Sao Paulo,SP,BR,,,GMT-03:00 America/Sao_Paulo,-46.66,-23.56
+Starbucks,16732-171265,Berrini,Company Owned,"Av. Engenheiro Luis Carlos Berrini, 773, Itaim Bibi, Shopping Center Norte",Sao Paulo,SP,BR,04571-010,(11) 5102-2761,GMT-03:00 America/Sao_Paulo,-46.69,-23.6
+Starbucks,15076-137360,Shopping Center Norte,Company Owned,"Travessa Casalbuono, 120, Loja 414 parte",Sao Paulo,SP,BR,02089-900,55 11 2089-1189,GMT-03:00 America/Sao_Paulo,-46.62,-23.52
+Starbucks,23535-230929,Paulista 500,Company Owned,"Avenida Paulista, 500, Shopping Bourbon Pompeia",Sao Paulo,SP,BR,01311-000,,GMT-03:00 America/Sao_Paulo,-46.65,-23.57
+Starbucks,15087-119368,Bourbon Shopping,Company Owned,"Rua Turiassu, 2.100 - SUC 120, Shopping Villa Lobos",Sao Paulo,SP,BR,05005-000,55 11 3892-5962,GMT-03:00 America/Sao_Paulo,-46.68,-23.53
+Starbucks,15071-139724,Shopping Villa Lobos,Company Owned,"Avenida das Nacoes Unidas, 4.777, Lote A - Lojas 156/157",Sao Paulo,SP,BR,05477-000,55 11 3024-4174,GMT-03:00 America/Sao_Paulo,-46.72,-23.55
+Starbucks,17760-185965,E-business,Company Owned,"Rua Werner Siemens, 111, Predio 33, loja 16, Espaco Empresarial E-bus. Park",Sao Paulo,SP,BR,05069-010,(11) 3611-4055,GMT-03:00 America/Sao_Paulo,-46.71,-23.51
+Starbucks,18850-196006,Metro Tatuape,Company Owned,"Rua Domingos Agostim, 91 Loja M-27/M28, Shopping Patio Paulista",Sao Paulo,SP,BR,03306-010,,GMT-03:00 America/Sao_Paulo,-46.58,-23.54
+Starbucks,20182-203439,Shopping Paulista Saraiva,Company Owned,"Rua Treze de Maio, 1947, Piso Paraiso, Shopping Frei Caneca",Sao Paulo,SP,BR,01327-001,,GMT-03:00 America/Sao_Paulo,-46.64,-23.57
+Starbucks,21972-216324,Shopping Frei Caneca Kiosk,Company Owned,"Rua Frei Caneca, 569, Piso Terreo",Sao Paulo,SP,BR,01307-001,,GMT-03:00 America/Sao_Paulo,-46.65,-23.55
+Starbucks,18328-189824,Jundiai Shopping,Company Owned,"Avenida Nove de julho, 2903, Jundiai District",Sao Paulo,SP,BR,04151-100,,GMT-03:00 America/Sao_Paulo,-46.89,-23.2
+Starbucks,15089-138507,Desembargador Eliseu Guilherme,Company Owned,"Rua Desembargador Eliseu Guilherme, 200, Loja 4",Sao Paulo,SP,BR,04004-030,55 11 3052-0609,GMT-03:00 America/Sao_Paulo,-46.64,-23.57
+Starbucks,24299-237048,Shopping Metro Itaquera,Company Owned,"Av. Jose Pinheiro Borges, s/n, Piso Itaquera - Itaquera",Sao Paulo,SP,BR,08220-900,,GMT-03:00 America/Sao_Paulo,-46.47,-23.54
+Starbucks,15290-159665,Anhembi Morumbi Centro,Company Owned,"Rua Dr. Almeida Lima, 1134, Bras",Sao Paulo,SP,BR,03164-000,(11) 2291-5803,GMT-03:00 America/Sao_Paulo,-46.61,-23.55
+Starbucks,16693-174504,"Rua Augusta, 1987",Company Owned,"Rua Augusta, 1987, Shopping Patio Higienopolis",Sao Paulo,SP,BR,01413-000,(11) 3062-4466,GMT-03:00 America/Sao_Paulo,-46.66,-23.56
+Starbucks,15080-108726,Shopping Higienópolis,Company Owned,"Av. Higienopolis, 618, Shopping Patio Higienopolis - Arco 324",Sao Paulo,SP,BR,01238-000,55 11 3823-2544,GMT-03:00 America/Sao_Paulo,-46.66,-23.54
+Starbucks,15090-129744,Brascan Open Mall,Company Owned,"Rua Joaquim Floriano, 466, Loja 28",Sao Paulo,SP,BR,04534-002,55 11 2165-1380,GMT-03:00 America/Sao_Paulo,-46.68,-23.58
+Starbucks,25212-239906,CENU,Company Owned,"Av. das Nacoes Unidas, 12901, Torre Oeste, Terreo",Sao Paulo,SP,BR,,,GMT-03:00 America/Sao_Paulo,-46.7,-23.61
+Starbucks,22198-218465,Tiete Plaza,Company Owned,"Av. Raimundo Pereira de Magalhaes, 1465, Terreo - Pirituba, Shopping Jardim Analia Franco",Sao Paulo,SP,BR,,,GMT-03:00 America/Sao_Paulo,-46.72,-23.51
+Starbucks,15074-141446,Shopping Analia Franco,Company Owned,"Avenida Regente Feijo, 1739 LUC, LR-67/68",Sao Paulo,SP,BR,03342-000,55 11 2838-6700,GMT-03:00 America/Sao_Paulo,-46.56,-23.56
+Starbucks,15070-138325,Rua Lavandisca,Company Owned,"Alameda Jauaperi,597",Sao Paulo,SP,BR,04523-012,55 11 2691-4063,GMT-03:00 America/Sao_Paulo,-46.66,-23.6
+Starbucks,18152-188284,Manoel da Nobrega,Company Owned,"Rua Manoel da Nobrega, 61 e 65, Paraiso",Sao Paulo,SP,BR,04001-080,,GMT-03:00 America/Sao_Paulo,-46.65,-23.57
+Starbucks,15084-119365,Alameda Santos,Company Owned,"Alameda Santos, 1.054, Cerqueira Cesar",Sao Paulo,SP,BR,01418-100,55 11 3285-2553,GMT-03:00 America/Sao_Paulo,-46.65,-23.57
+Starbucks,18059-187909,Market Place,Company Owned,"Avenida Dr Chucre Zaidan, 902 Loja 118, Top Center Shopping",Sao Paulo,SP,BR,04583-903,,GMT-03:00 America/Sao_Paulo,-46.7,-23.62
+Starbucks,15068-127148,Top Center Shopping,Company Owned,"Avenida Paulista, 854 - LUC 34",Sao Paulo,SP,BR,01310-100,55 11 3262-4678,GMT-03:00 America/Sao_Paulo,-46.65,-23.57
+Starbucks,25013-239489,Praca da Republica,Company Owned,"Rua Basilio da Gama, 56, Republica, Shopping Ibirapuera",Sao Paulo,SP,BR,,,GMT-03:00 America/Sao_Paulo,-46.64,-23.55
+Starbucks,15085-119387,Shopping Ibirapuera,Company Owned,"Av. Ibirapuera, 3.103 - SUC 145, Shopping Ibirapuera (Saraiva)",Sao Paulo,SP,BR,04029-902,55 11 5093-2312,GMT-03:00 America/Sao_Paulo,-46.67,-23.61
+Starbucks,23771-231944,SP Market,Company Owned,"Avenida das Nacoes Unidas, 22.540, Loja A4 29, Morumbi Shopping",Sao Paulo,SP,BR,04795-000,,GMT-03:00 America/Sao_Paulo,-46.7,-23.68
+Starbucks,15078-106618,Morumbi Shopping New Wing,Company Owned,"Av. Roque Petroni Jr, 1.089 loja 234 B/S, Morumbi Shopping-Nivel Superior, Universidade Mackenzie",Sao Paulo,SP,BR,04707-970,55 11 5181-2108,GMT-03:00 America/Sao_Paulo,-46.7,-23.62
+Starbucks,21604-212986,Universidade Mackenzie,Company Owned,"Rua da Consolacao, 930, Consolacao",Sao Paulo,SP,BR,,,GMT-03:00 America/Sao_Paulo,-46.65,-23.55
+Starbucks,17190-179664,RochaVera,Company Owned,"Av. das Nacoes Unidas, 14.171, Torre C, Piso Terreo - Vila Gertrudes",Sao Paulo,SP,BR,04795-100,,GMT-03:00 America/Sao_Paulo,-46.7,-23.62
+Starbucks,19143-199070,JK Mall,Company Owned,"Av. Pres. Juscelino Kubitschek, 2041, 3o Piso - Itaim Bibi",Sao Paulo,SP,BR,04543-011,,GMT-03:00 America/Sao_Paulo,-46.69,-23.59
+Starbucks,15069-134020,Rua Joao Saad,Company Owned,"Avenida Jorge Joao Saad, 900 - loja 09, Vila Inah, Edifício Conde Andrea Matarazzo",Sao Paulo,SP,BR,05620-070,55 11 3507-4182,GMT-03:00 America/Sao_Paulo,-46.72,-23.59
+Starbucks,17660-184304,Trianon Paulista,Company Owned,"Av. Paulista, 1499, Bela Vista",Sao Paulo,SP,BR,01311-200,(11) 3171-3448,GMT-03:00 America/Sao_Paulo,-46.66,-23.56
+Starbucks,20467-188924,Gomes de Carvalho,Company Owned,"Rua Gomes de Carvalho, 1740, Loja 6, Vila Olimpia",Sao Paulo,SP,BR,04547-002,,GMT-03:00 America/Sao_Paulo,-46.69,-23.59
+Starbucks,17023-178613,Mooca Plaza Shopping,Company Owned,"Rua Capitao Pacheco e Chaves, 313, Loja 2064, Piso L2",Sao Paulo,SP,BR,03126-000,(11) 2061-8394,GMT-03:00 America/Sao_Paulo,-46.59,-23.58
