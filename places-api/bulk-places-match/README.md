@@ -69,4 +69,4 @@ python3 harmonize_v43.py --input 100-starbucks.csv --output 100-starbucks-output
 
 
 ## Notice 
-Please be aware of your available Foursquare API credits. Each row of the provided input file will be a individual API call. Review our [pricing model](https://location.foursquare.com/pricing/#:~:text=Contact%20Sales-,Places%20API%20pricing,-Product) to understand the financial impact of larger files. 
+Please be aware of your available Foursquare API credits. Each row of the provided input file will be a individual API call. A 40k line input file will deplete an account's monthly $200 free credits. Review our [pricing model](https://location.foursquare.com/pricing/#:~:text=Contact%20Sales-,Places%20API%20pricing,-Product) to understand the financial impact of larger files. 
