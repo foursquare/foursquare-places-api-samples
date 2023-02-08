@@ -1,6 +1,6 @@
-# Foursquare Developer Examples :blue_book:
+# Foursquare Places API Examples :blue_book:
 
-This repo will contain examples for developers to quickly get familiar with Foursquare's products. 
+This repo will contain examples for developers to quickly get started with Foursquare's Places API use-cases. 
 
 ## Guidelines :memo:
 - Follow this repo's structure when adding new examples. 
