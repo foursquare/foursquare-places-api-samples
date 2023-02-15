@@ -32,12 +32,10 @@ parser = argparse.ArgumentParser(
     description='Match / Harmonize places against Foursquare API')
 parser.add_argument("--input", required=True, help="Input filename")
 parser.add_argument("--output", required=False,
-                    help="Output filename, defaults to <input filename>.out")
+                    help="Output filename, defaults to <input filename>-out.csv")
 parser.add_argument("--separator", required=False, default="T",
                     help="Separator in the CSV file (C)omma,(T)ab,(P)ipe,(S)emi(C)olon", choices=["C", "T", "P", "SC"])
 parser.add_argument("--country", required=False, help="Country")
-parser.add_argument("--match-type", required=False,
-                    default="ALL", help="Specify one of ALL, NAME, ADDRESS")
 parser.add_argument("--column_mapping", required=False, default='{"id":"id_col","name":"name_col","address":"address_column","city":"city_col","state":"state_col","postalCode":"postalcode_col","cc":"country_col","lat":"lat_col","lng":"lon_col","ll":"ll_col"}',
                     help="Field to column mapping for id, name, address, city, state, zip/postalcode, country, lat, lng, ll")
 
@@ -61,7 +59,7 @@ ADDRESS_COL = MAPPING["address"]
 CITY_COL = MAPPING["city"]
 STATE_COL = MAPPING["state"] if "state" in MAPPING else None
 POSTCODE_COL = MAPPING["postalCode"]
-COUNTY_COL = MAPPING["cc"] if "cc" in MAPPING else None
+COUNTRY_COL = MAPPING["cc"] if "cc" in MAPPING else None
 LAT_COL = MAPPING["lat"] if "lat" in MAPPING else None
 LON_COL = MAPPING["lat"] if "lon" in MAPPING else None
 
@@ -88,7 +86,7 @@ else:
 MY_FILE_INPUT = args.input
 
 if args.output is None:
-    MY_FILE_OUTPUT = f"{args.input}.out"
+    MY_FILE_OUTPUT = f"{args.input}-out.csv"
 else:
     MY_FILE_OUTPUT = f"{args.output}"
 
@@ -253,7 +251,7 @@ if __name__ == "__main__":
                     if args.country is not None:
                         params['cc'] = args.country
                     else:
-                        params['cc'] = row[COUNTY_COL]
+                        params['cc'] = row[COUNTRY_COL]
                     params['id'] = id
                     #
 
