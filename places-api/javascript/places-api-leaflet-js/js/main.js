@@ -26,7 +26,7 @@ $(document).ready(function() {
         "method": "GET",
         "headers": {
           "Accept": "application/json",
-          "Authorization": "fsq3s7FBB/j+sejounfIkkxbTBGY24A8dh7ex6kEdqpxK00="
+          "Authorization": "FSQ_API_KEY"
         }
       };
 
