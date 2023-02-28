@@ -50,10 +50,6 @@ final class MapBoxMapViewController: UIViewController, LocationPermissionsDelega
         prepareStyle()
     }
     
-    public override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
     @objc private func onMapClick(_ sender: UITapGestureRecognizer) {
         guard sender.state == .ended else { return }
         addViewAnnotation(at: mapView.mapboxMap.coordinate(for: sender.location(in: mapView)), title: "Tapped", markerId: UUID().uuidString)
