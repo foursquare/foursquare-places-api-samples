@@ -20,6 +20,7 @@ It includes two pages of the docs demo so far:
 
 * Local Search Mapping
 * Address Form Autofill
+* Address Directory
 
 This project uses plain HTML, CSS and Javascript only.
 
