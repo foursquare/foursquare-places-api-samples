@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Address Directory</title>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css" rel="stylesheet" />
+  </head>
+  <body>
+      <style>
+        .venue {
+          position: relative;
+        }
+
+        .venue--map {
+          width: 100%;
+          height: 500px;
+          background-color: #f8f8f8;
+        }
+
+        .venue--details-outer {
+          display: flex;
+          box-sizing: border-box;
+          width: 100%;
+          padding: 16px;
+          background-color: #f8f8f8;
+        }
+
+        .venue--details {
+          width: 100%;
+          padding: 16px 16px 0px 16px;
+          background-color: #ffffff;
+          overflow-y: auto;
+        }
+
+        .venue--details p {
+          margin: 0 0 16px 0;
+        }
+
+        .venue--details span {
+          color: #757575;
+        }
+
+        .venue--details div > div {
+          margin-bottom: 8px;
+        }
+
+        .venue--schedule {
+          margin-top: 16px;
+        }
+
+        .venue--schedule div > div {
+          margin: 0px;
+        }
+
+        .venue--hours {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .venue--related-place,
+        .venue--tip {
+          margin-bottom: 24px !important;
+        }
+
+        .venue--directory {
+          margin-bottom: 32px !important;
+        }
+
+        .venue--directory p {
+          margin: 8px 0;
+        }
+
+        .venue--text {
+          font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica', 'Arial',
+            'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+          color: #171417;
+        }
+
+        .venue--text-regular {
+          color: #171417 !important;
+        }
+
+        .venue--secondary-text {
+          color: #959b9e;
+          font-size: 14px;
+        }
+
+        .venue--rating-text {
+          color: #389e45;
+        }
+
+        .venue--closed-text {
+          color: #de1912;
+        }
+
+        .venue--background-icon {
+          background-size: 16px !important;
+          background-position-x: 16px !important;
+          background-position-y: 50% !important;
+          background-repeat: no-repeat !important;
+        }
+
+        hr {
+          border: 0;
+          height: 0;
+          border-top: 1px solid rgba(0, 0, 0, 0.1);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+          margin: 16px 0;
+        }
+
+        .mapboxgl-ctrl-top-right {
+          left: 24px;
+          top: 80px;
+          right: unset;
+          z-index: 0;
+        }
+
+        @media only screen and (min-width: 600px) {
+          /* For Tablet: */
+          .mapboxgl-ctrl-top-right {
+            left: unset;
+            top: 0;
+            right: 0;
+            z-index: 2;
+          }
+        }
+
+        @media only screen and (min-width: 968px) {
+          /* For Desktop: */
+          #venue-dropdown,
+          #venue-search {
+            width: 392px !important;
+          }
+
+          .venue--map {
+            min-width: 400px;
+          }
+
+          .venue--details-outer {
+            min-width: 400px;
+            padding: 24px;
+          }
+
+          .venue--map-details-wrapper {
+            display: flex;
+            height: 500px;
+          }
+        }
+
+        #venue-search {
+          box-sizing: border-box;
+          position: absolute;
+          top: 24px;
+          left: 24px;
+          padding: 8px 16px;
+          padding-left: 48px;
+          width: 85%;
+          height: 40px;
+          background-color: #ffffff;
+          border: 1px solid #e0ddde;
+          border-radius: 4px;
+          background-image: url('https://files.readme.io/1bc7c8b-searchIcon.svg');
+        }
+
+        #venue-search:hover,
+        #venue-search:focus {
+          outline: none;
+          border-color: #3333ff;
+        }
+
+        #venue-dropdown {
+          display: none;
+          position: absolute;
+          top: 68px;
+          left: 24px;
+          background-color: #ffffff;
+          border-radius: 4px;
+          border: 1px solid #f4f4f4;
+          width: 85%;
+          z-index: 1;
+        }
+
+        #venue-suggestions {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          max-height: 300px;
+          overflow-y: scroll;
+        }
+
+        #flex-container {
+          display: flex;
+        }
+
+        .venue--dropdown-item:hover {
+          background-color: #f1f1f1;
+          cursor: pointer;
+        }
+
+        .venue--dropdown-item {
+          padding: 16px;
+          background: #ffffff;
+          box-shadow: inset 0px -1px 0px #f4f4f4;
+        }
+
+        .venue--dropdown-item div {
+          pointer-events: none;
+        }
+
+        .venue--copyright {
+          background: #faf8f8;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .venue--error {
+          padding: 8px 16px;
+          padding-left: 48px;
+          background: #fcedec;
+          color: #980500;
+          border: 1px solid rgba(152, 5, 0, 0.3);
+          border-radius: 4px;
+          margin: 8px;
+          background-image: url('https://files.readme.io/62b6781-errorIcon.svg');
+        }
+
+        .venue--icon {
+          display: flex;
+        }
+
+        .venue--icon img {
+          margin-left: 10px;
+        }
+
+        .venue--photos {
+          display: flex;
+          overflow-x: auto;
+        }
+
+        .venue--photos img {
+          margin-right: 8px;
+        }
+
+        .venue--categories,
+        .venue--features,
+        .venue--tips,
+        .venue--related-places,
+        .venue--directories {
+          margin: 16px 0;
+        }
+
+        .venue--categories,
+        .venue--features p {
+          margin: 8px 0;
+        }
+
+        .venue--end {
+          margin-bottom: 16px;
+        }
+      </style>
+      <div class="venue">
+        <div class="venue--map-details-wrapper">
+          <div id="map" class="venue--map"></div>
+          <div id="flex-container" class="venue--text">
+            <input
+              type="text"
+              class="venue--background-icon venue--text"
+              id="venue-search"
+              placeholder="Search Foursquare Places"
+            />
+            <div>
+              <div id="venue-dropdown">
+                <ul id="venue-suggestions"></ul>
+                <div id="venue-error" class="venue--error venue--background-icon">
+                  Something went wrong. Please refresh and try again.
+                </div>
+                <div id="venue-not-found" class="venue--error venue--background-icon"></div>
+                <div class="venue--copyright">
+                  <img
+                    src="https://files.readme.io/7835fdb-powerByFSQ.svg"
+                    alt="powered by foursquare"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="venue-details-outer" class="venue--details-outer venue--text"></div>
+        </div>
+      </div>
+      <script>
+        /* Note: Copy the Code inside this method to the JS Code Snippet section only */
+        function loadVenueNameAddressSearchJs() {
+          mapboxgl.accessToken = 'MAPBOX_TOKEN';
+          const fsqAPIToken = 'FSQ_API_TOKEN';
+          let userLat = 40.7128;
+          let userLng = -74.006;
+          let sessionToken = generateRandomSessionToken();
+          const inputField = document.getElementById('venue-search');
+          const dropDownField = document.getElementById('venue-dropdown');
+          const ulField = document.getElementById('venue-suggestions');
+          const errorField = document.getElementById('venue-error');
+          const notFoundField = document.getElementById('venue-not-found');
+          const detailsField = document.getElementById('venue-details-outer');
+
+          detailsField.style.display = 'none';
+
+          const onChangeAutoComplete = debounce(changeAutoComplete);
+          inputField.addEventListener('input', onChangeAutoComplete);
+          ulField.addEventListener('click', selectItem);
+
+          function success(pos) {
+            const { latitude, longitude } = pos.coords;
+            userLat = latitude;
+            userLng = longitude;
+            flyToLocation(userLat, userLng);
+          }
+
+          function logError(err) {
+            console.warn(`ERROR(${err.code}): ${err.message}`);
+          }
+
+          navigator.geolocation.getCurrentPosition(success, logError, {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0,
+          });
+
+          const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/light-v10',
+            center: [userLng, userLat],
+            zoom: 12,
+          });
+
+          map.addControl(new mapboxgl.GeolocateControl());
+          map.addControl(new mapboxgl.NavigationControl());
+
+          let currentMarker;
+
+          /* Generate a random string with 32 characters.
+           Session Token is a user-generated token to identify a session for billing purposes.
+           Learn more about session tokens.
+           https://docs.foursquare.com/reference/session-tokens
+        */
+          function generateRandomSessionToken(length = 32) {
+            let result = '';
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            for (let i = 0; i < length; i++) {
+              result += characters[Math.floor(Math.random() * characters.length)];
+            }
+            return result;
+          }
+
+          let isFetching = false;
+          async function changeAutoComplete({ target }) {
+            const { value: inputSearch = '' } = target;
+            ulField.innerHTML = '';
+            notFoundField.style.display = 'none';
+            errorField.style.display = 'none';
+            if (inputSearch.length && !isFetching) {
+              try {
+                isFetching = true;
+                const results = await autoComplete(inputSearch);
+                if (results && results.length) {
+                  results.forEach((value) => {
+                    addItem(value);
+                  });
+                } else {
+                  notFoundField.innerHTML = `Foursquare can't
+                find ${inputSearch}. Make sure your search is spelled correctly.
+                <a href="https://foursquare.com/add-place?ll=${userLat}%2C${userLng}&venuename=${inputSearch}"
+                  target="_blank" rel="noopener noreferrer">Don't see the place you're looking for?</a>.`;
+                  notFoundField.style.display = 'block';
+                }
+              } catch (err) {
+                errorField.style.display = 'block';
+                logError(err);
+              } finally {
+                isFetching = false;
+                dropDownField.style.display = 'block';
+              }
+            } else {
+              dropDownField.style.display = 'none';
+            }
+          }
+
+          async function autoComplete(query) {
+            const { lng, lat } = map.getCenter();
+            userLat = lat;
+            userLng = lng;
+            try {
+              const searchParams = new URLSearchParams({
+                query,
+                types: 'place,address',
+                ll: `${userLat},${userLng}`,
+                radius: 50000,
+                session_token: sessionToken,
+              }).toString();
+              const searchResults = await fetch(
+                `https://api.foursquare.com/v3/autocomplete?${searchParams}`,
+                {
+                  method: 'get',
+                  headers: new Headers({
+                    Accept: 'application/json',
+                    Authorization: fsqAPIToken,
+                  }),
+                }
+              );
+              const data = await searchResults.json();
+              return data.results;
+            } catch (error) {
+              throw error;
+            }
+          }
+
+          function addItem(value) {
+            const type = value.type;
+            if (type === 'place') {
+              const placeDetail = value[value.type];
+              if (!placeDetail || !placeDetail.geocodes || !placeDetail.geocodes.main) return;
+              const { latitude, longitude } = placeDetail.geocodes.main;
+              const fsqId = placeDetail.fsq_id;
+              const dataObject = JSON.stringify({ type, fsqId, latitude, longitude });
+              ulField.innerHTML += `<li class="venue--dropdown-item" data-object='${dataObject}'>
+              <div>${highlightedNameElement(value.text)}</div>
+              <div class="venue--secondary-text">${value.text.secondary}</div>
+            </li>`;
+            } else {
+              const addressDetail = value;
+              if (!addressDetail || !addressDetail.text) return;
+              const addressId = addressDetail.address.address_id;
+              const dataObject = JSON.stringify({ type, addressId });
+              ulField.innerHTML += `<li class="venue--dropdown-item" data-object='${dataObject}'>
+              <div>${highlightedNameElement(value.text)}</div>
+              <div class="venue--secondary-text">${value.text.secondary}</div>
+            </li>`;
+            }
+          }
+
+          async function selectItem({ target }) {
+            if (target.tagName === 'LI') {
+              const valueObject = JSON.parse(target.dataset.object);
+
+              if (valueObject.type === 'place') {
+                const { latitude, longitude, fsqId } = valueObject;
+                const searchParams = new URLSearchParams({
+                  fields:
+                    'fsq_id,name,geocodes,location,photos,categories,related_places,rating,price,description,tel,website,email,social_media,hours,menu,features,tips,',
+                  session_token: sessionToken,
+                }).toString();
+                const placeApiURL = `https://api.foursquare.com/v3/places/${fsqId}?${searchParams}`;
+                const placeDetail = await fetchVenueDetails(placeApiURL);
+                detailsField.innerHTML = `<div class="venue--details">
+                ${renderVenueDetails(placeDetail)}</div>`;
+                detailsField.style.display = 'flex';
+                addMarker(latitude, longitude, placeDetail);
+                flyToLocation(latitude, longitude);
+              } else {
+                const { addressId } = valueObject;
+                const searchParams = new URLSearchParams({
+                  session_token: sessionToken,
+                }).toString();
+                const addressApiURL = `https://api.foursquare.com/v3/address/${addressId}?${searchParams}`;
+                const addressDetail = await fetchVenueDetails(addressApiURL);
+                if (!addressDetail || !addressDetail.geocodes || !addressDetail.geocodes.main)
+                  return;
+                renderAddressDetails(addressDetail);
+                detailsField.style.display = 'flex';
+                const { latitude, longitude } = addressDetail.geocodes.main;
+                addMarker(latitude, longitude, addressDetail);
+                flyToLocation(latitude, longitude);
+              }
+
+              // generate new session token after a complete search
+              sessionToken = generateRandomSessionToken();
+              const name = target.dataset.name;
+              inputField.value = target.children[0].textContent;
+              dropDownField.style.display = 'none';
+            }
+          }
+
+          async function fetchVenueDetails(URL) {
+            try {
+              const results = await fetch(`${URL}`, {
+                method: 'get',
+                headers: new Headers({
+                  Accept: 'application/json',
+                  Authorization: fsqAPIToken,
+                }),
+              });
+              const data = await results.json();
+              return data;
+            } catch (err) {
+              logError(err);
+            }
+          }
+
+          function renderVenueDetails(venueDetails) {
+            let venueDetailsHTML = '';
+            venueDetailsHTML = `<p>${venueDetails.name}</p>
+                <p><span>Address:</span> ${
+                  venueDetails.location.address ? venueDetails.location.address : 'N/A'
+                }</p>
+                <p class="venue--rating-text"><span>Rating:</span> ${
+                  venueDetails.rating ? `${venueDetails.rating}` : 'N/A'
+                } <span class="venue--text-regular">(0-10 with 10 as the best rating)</span></p>
+                <p><span>Price:</span> ${venueDetails.price ? venueDetails.price : 'N/A'} (1-4)</p>
+                <hr>
+                <p><span>Description:</span> ${
+                  venueDetails.description ? `<p>${venueDetails.description}</p>` : 'N/A'
+                }</p>
+                <hr>
+                <div><span>Business Hours:</span> ${
+                  venueDetails.hours.regular
+                    ? `${renderBusinessHours(venueDetails.hours.regular)}`
+                    : 'N/A'
+                }</div>
+                <hr>
+                <div><span>Categories</span> ${
+                  venueDetails.categories
+                    ? `<div class="venue--categories">${renderCategories(
+                        venueDetails.categories
+                      )}</div>`
+                    : 'N/A'
+                }</div>
+                <hr>
+                <p><span>Tel:</span> ${venueDetails.tel ? `${venueDetails.tel}` : 'N/A'}</p>
+                <p><span>Website:</span> ${
+                  venueDetails.website ? `${venueDetails.website}` : 'N/A'
+                }</p>
+                <hr>
+                <p><span>Menu:</span> ${venueDetails.menu ? `${venueDetails.menu}` : 'N/A'}</p>
+                <hr>
+                <p><span>Instagram:</span> ${
+                  venueDetails.hasOwnProperty('social_media') && venueDetails.social_media.instagram
+                    ? `@${venueDetails.social_media.instagram}`
+                    : 'N/A'
+                }</p>
+                <p><span>Twitter:</span> ${
+                  venueDetails.hasOwnProperty('social_media') && venueDetails.social_media.twitter
+                    ? `@${venueDetails.social_media.twitter}`
+                    : 'N/A'
+                }</p>
+                <p><span>Facebook Id:</span> ${
+                  venueDetails.hasOwnProperty('social_media') &&
+                  venueDetails.social_media.facebook_id
+                    ? `${venueDetails.social_media.facebook_id}`
+                    : 'N/A'
+                }</p>
+                <hr>
+                <div><span>Features:</span> ${
+                  venueDetails.features ? `${renderFeatures(venueDetails.features)}` : 'N/A'
+                }</div>
+                <hr>
+                <div><span>Photos:</span> ${
+                  venueDetails.photos.length
+                    ? `<div class="venue--photos">${renderPhotos(venueDetails.photos)}</div>`
+                    : 'N/A'
+                }</div>
+                <hr>
+                <div><span>Tips:</span> ${
+                  venueDetails.features
+                    ? `<div class="venue--tips">${renderTips(venueDetails.tips)}</div>`
+                    : 'N/A'
+                }</div>
+                <hr>
+                <div class="venue--end"><span>Related Places: </span> ${
+                  venueDetails.related_places && venueDetails.related_places.children
+                    ? `<div class="venue--related-places">${renderRelatedPlaces(
+                        venueDetails.related_places.children
+                      )}<div>`
+                    : 'N/A'
+                }</div>
+                `;
+            return venueDetailsHTML;
+          }
+
+          function renderAddressDetails(addressDetails) {
+            let addressHTML = '';
+            if (!addressDetails.directory) {
+              addressHTML =
+                addressDetails.location.address +
+                ', ' +
+                addressDetails.location.locality +
+                ', ' +
+                addressDetails.location.region +
+                ' ' +
+                addressDetails.location.postcode;
+            } else if (addressDetails.directory.length === 1) {
+              addressDetails.directory[0].location = addressDetails.location;
+              addressHTML = renderVenueDetails(addressDetails.directory[0]);
+            } else {
+              addressHTML = renderVenueWithMultipleDirectories(addressDetails.directory);
+            }
+            return (detailsField.innerHTML = `<div class="venue--details">${addressHTML}</div>`);
+          }
+
+          function renderBusinessHours(hoursArray) {
+            const hours = [
+              { day: 'Monday', time: '' },
+              { day: 'Tuesday', time: '' },
+              { day: 'Wednesday', time: '' },
+              { day: 'Thursday', time: '' },
+              { day: 'Friday', time: '' },
+              { day: 'Saturday', time: '' },
+              { day: 'Sunday', time: '' },
+            ];
+            hoursArray.forEach((element, i) => {
+              hours[element.day - 1].time += renderHourRange(element.open, element.close);
+            });
+
+            const businessHoursHTML = hours
+              .reduce((html, el) => {
+                return (
+                  html +
+                  `<div class="venue--hours">${el.day}: <div>${
+                    el.time ? el.time : '<div class="venue--closed-text">Closed</div>'
+                  }</div></div>`
+                );
+              }, '<div class="venue--schedule">')
+              .concat('</div>');
+
+            return businessHoursHTML;
+          }
+
+          function renderHourRange(open, close) {
+            return convertTime(open) + ' - ' + convertTime(close) + '<br />';
+          }
+
+          function renderCategories(categoriesArray) {
+            let categoriesHTML = '';
+            categoriesArray.forEach((element) => {
+              categoriesHTML += `<div class="venue--categories"><p>Id: ${
+                element.id ? element.id : 'N/A'
+              }</p>
+                <p>Name: ${element.name ? element.name : 'N/A'}</p>
+                <p class="venue--icon">Icon: <img src=${
+                  element.icon.prefix + 'bg_32' + element.icon.suffix
+                } alt=${element.name} /> </p></div>`;
+            });
+            return categoriesHTML;
+          }
+
+          function renderPhotos(photosArray) {
+            let photosHTML = '';
+            photosArray.forEach((element) => {
+              photosHTML += `<img src=${
+                element.prefix + '96x96' + element.suffix
+              } alt='Venue Photo' />`;
+            });
+            return photosHTML;
+          }
+
+          // Venue features object has a lot more possible fields to render, these were just the ones that were chosen to show from the figma
+          function renderFeatures(venueFeatures) {
+            let featuresHTML = '';
+
+            if (
+              venueFeatures.payment &&
+              venueFeatures.payment.credit_cards &&
+              venueFeatures.payment.credit_cards.accepts_credit_cards === true
+            )
+              featuresHTML += '<p>Accepts Credit Cards </p>';
+
+            if (venueFeatures.amenities && venueFeatures.amenities.outdoor_seating === true)
+              featuresHTML += '<p>Outdoor Seating </p>';
+
+            if (venueFeatures.amenities && venueFeatures.amenities.live_music === true)
+              featuresHTML += '<p>Live Music </p>';
+
+            if (featuresHTML === '') return (featuresHTML = 'N/A');
+
+            return `<div class="venue--features">${featuresHTML}</div>`;
+          }
+
+          function renderTips(tipsArray) {
+            let tipsHTML = '';
+            tipsArray.forEach((element) => {
+              let oneTipHTML = '';
+
+              oneTipHTML += `<span>Created At:</span> ${
+                element.created_at ? element.created_at.slice(0, 10) + '<br />' : 'N/A'
+              }
+              <span>Text:</span> ${element.text ? element.text + '<br />' : 'N/A'}`;
+              tipsHTML += `<div class="venue--tip">${oneTipHTML}</div>`;
+            });
+
+            return tipsHTML;
+          }
+
+          function renderRelatedPlaces(relatedPlacesArray) {
+            let relatedPlacesHTML = '';
+            relatedPlacesArray.forEach((element) => {
+              let oneRelatedPlaceHTML = '';
+
+              oneRelatedPlaceHTML += `Fsq Id: ${element.fsq_id ? element.fsq_id + '<br />' : 'N/A'}
+              Name: ${element.name ? element.name + '<br />' : 'N/A'}`;
+              relatedPlacesHTML += `<div class="venue--related-place">${oneRelatedPlaceHTML}</div>`;
+            });
+
+            return relatedPlacesHTML;
+          }
+
+          function renderVenueWithMultipleDirectories(directoriesArray) {
+            let directoriesHTML = '';
+
+            directoriesArray.forEach((element) => {
+              directoriesHTML += `<div class="venue--directory">
+                <p><img alt='Venue Photo' src=${
+                  element.photos.length
+                    ? element.photos[0].prefix + '96x96' + element.photos[0].suffix
+                    : ''
+                } /></p>
+                <p>Name: ${element.name ? element.name : 'N/A'}</p>
+                <p>Id: ${element.fsq_id ? element.fsq_id : 'N/A'}</p>
+                <p>Category: ${element.categories.length ? element.categories[0].name : 'N/A'}</p>
+                <p>Rating: ${
+                  element.rating ? `${element.rating}` : 'N/A'
+                } (0-10 with 10 as the best rating)</p></div>`;
+            });
+            return `<span>Directory</span> <div class="venue--directories">${directoriesHTML}</div>`;
+          }
+
+          function addMarker(lat, lng) {
+            if (currentMarker) currentMarker.remove();
+            currentMarker = new mapboxgl.Marker({
+              color: '#3333FF',
+            })
+              .setLngLat([lng, lat])
+              .addTo(map);
+          }
+
+          function flyToLocation(lat, lng) {
+            map.resize();
+            map.flyTo({
+              center: [lng, lat],
+            });
+          }
+
+          function convertTime(timeStr) {
+            const timeSplit = [timeStr.slice(0, 2), timeStr.slice(2)];
+            const hour12 = ((parseInt(timeSplit[0]) + 11) % 12) + 1;
+            const ampm = timeStr >= 1200 && timeStr < 2400 ? 'PM' : 'AM';
+            return `${hour12}:${timeSplit[1]} ${ampm}`;
+          }
+
+          function highlightedNameElement(textObject) {
+            if (!textObject) return '';
+            const { primary, highlight } = textObject;
+            if (highlight && highlight.length) {
+              let beginning = 0;
+              let hightligtedWords = '';
+              for (let i = 0; i < highlight.length; i++) {
+                const { start, length } = highlight[i];
+                hightligtedWords += primary.substr(beginning, start - beginning);
+                hightligtedWords += '<b>' + primary.substr(start, length) + '</b>';
+                beginning = start + length;
+              }
+              hightligtedWords += primary.substr(beginning);
+              return hightligtedWords;
+            }
+            return primary;
+          }
+
+          function debounce(func, timeout = 300) {
+            let timer;
+            return (...args) => {
+              clearTimeout(timer);
+              timer = setTimeout(() => {
+                func.apply(this, args);
+              }, timeout);
+            };
+          }
+        }
+
+        loadVenueNameAddressSearchJs();
+      </script>
+  </body>
+</html>
