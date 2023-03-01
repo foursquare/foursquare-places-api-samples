@@ -10,6 +10,7 @@ For additional support join our [Developer Discord Community](https://discord.gg
  - [Address Autofill and Web Place Search](./places-api/javascript/places-api-js/)
  - [Bulk Harmonization Script](./places-api/python-scripts/bulk-places-match/)
  - [Places API Search with Leaflet](./places-api/javascript/places-api-leaflet-js/)
+ - [Place Search in SwiftUI with Mapbox SDK](./places-api/ios/mapbox-swiftui/)
 
 
 
