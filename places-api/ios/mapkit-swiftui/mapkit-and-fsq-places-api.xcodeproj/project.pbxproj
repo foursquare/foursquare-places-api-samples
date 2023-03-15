@@ -1,0 +1,654 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		662F3E6D29B7D3BC0028EBAD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662F3E6C29B7D3BC0028EBAD /* LocationManager.swift */; };
+		665CA05F29A6752F00991492 /* mapkit_and_fsq_places_apiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665CA05E29A6752F00991492 /* mapkit_and_fsq_places_apiApp.swift */; };
+		665CA06429A6752F00991492 /* mapkit_and_fsq_places_api.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 665CA06229A6752F00991492 /* mapkit_and_fsq_places_api.xcdatamodeld */; };
+		665CA06629A6752F00991492 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665CA06529A6752F00991492 /* ContentView.swift */; };
+		665CA06829A6753100991492 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 665CA06729A6753100991492 /* Assets.xcassets */; };
+		665CA06C29A6753100991492 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 665CA06B29A6753100991492 /* Preview Assets.xcassets */; };
+		665CA07629A6753100991492 /* applewebkit_map_and_fsq_places_apiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665CA07529A6753100991492 /* applewebkit_map_and_fsq_places_apiTests.swift */; };
+		665CA08029A6753100991492 /* applewebkit_map_and_fsq_places_apiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665CA07F29A6753100991492 /* applewebkit_map_and_fsq_places_apiUITests.swift */; };
+		665CA08229A6753100991492 /* applewebkit_map_and_fsq_places_apiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665CA08129A6753100991492 /* applewebkit_map_and_fsq_places_apiUITestsLaunchTests.swift */; };
+		66F71F6F29AFC4F400D55E1D /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F71F6E29AFC4F400D55E1D /* Api.swift */; };
+		66F71F7129AFC52600D55E1D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F71F7029AFC52600D55E1D /* Models.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		665CA07229A6753100991492 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 665CA05329A6752F00991492 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 665CA05A29A6752F00991492;
+			remoteInfo = "applewebkit-map-and-fsq-places-api";
+		};
+		665CA07C29A6753100991492 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 665CA05329A6752F00991492 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 665CA05A29A6752F00991492;
+			remoteInfo = "applewebkit-map-and-fsq-places-api";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		662F3E6C29B7D3BC0028EBAD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		665CA05B29A6752F00991492 /* mapkit-and-fsq-places-api.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mapkit-and-fsq-places-api.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		665CA05E29A6752F00991492 /* mapkit_and_fsq_places_apiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapkit_and_fsq_places_apiApp.swift; sourceTree = "<group>"; };
+		665CA06329A6752F00991492 /* applewebkit_map_and_fsq_places_api.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = applewebkit_map_and_fsq_places_api.xcdatamodel; sourceTree = "<group>"; };
+		665CA06529A6752F00991492 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		665CA06729A6753100991492 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		665CA06929A6753100991492 /* mapkit_and_fsq_places_api.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mapkit_and_fsq_places_api.entitlements; sourceTree = "<group>"; };
+		665CA06B29A6753100991492 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		665CA07129A6753100991492 /* mapkit-and-fsq-places-apiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mapkit-and-fsq-places-apiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		665CA07529A6753100991492 /* applewebkit_map_and_fsq_places_apiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = applewebkit_map_and_fsq_places_apiTests.swift; sourceTree = "<group>"; };
+		665CA07B29A6753100991492 /* mapkit-and-fsq-places-apiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mapkit-and-fsq-places-apiUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		665CA07F29A6753100991492 /* applewebkit_map_and_fsq_places_apiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = applewebkit_map_and_fsq_places_apiUITests.swift; sourceTree = "<group>"; };
+		665CA08129A6753100991492 /* applewebkit_map_and_fsq_places_apiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = applewebkit_map_and_fsq_places_apiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		66F71F6E29AFC4F400D55E1D /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		66F71F7029AFC52600D55E1D /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		665CA05829A6752F00991492 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		665CA06E29A6753100991492 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		665CA07829A6753100991492 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		665CA05229A6752F00991492 = {
+			isa = PBXGroup;
+			children = (
+				665CA05D29A6752F00991492 /* mapkit-and-fsq-places-api */,
+				665CA07429A6753100991492 /* mapkit-and-fsq-places-apiTests */,
+				665CA07E29A6753100991492 /* mapkit-and-fsq-places-apiUITests */,
+				665CA05C29A6752F00991492 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		665CA05C29A6752F00991492 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				665CA05B29A6752F00991492 /* mapkit-and-fsq-places-api.app */,
+				665CA07129A6753100991492 /* mapkit-and-fsq-places-apiTests.xctest */,
+				665CA07B29A6753100991492 /* mapkit-and-fsq-places-apiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		665CA05D29A6752F00991492 /* mapkit-and-fsq-places-api */ = {
+			isa = PBXGroup;
+			children = (
+				665CA05E29A6752F00991492 /* mapkit_and_fsq_places_apiApp.swift */,
+				665CA06529A6752F00991492 /* ContentView.swift */,
+				66F71F6E29AFC4F400D55E1D /* Api.swift */,
+				662F3E6C29B7D3BC0028EBAD /* LocationManager.swift */,
+				66F71F7029AFC52600D55E1D /* Models.swift */,
+				665CA06729A6753100991492 /* Assets.xcassets */,
+				665CA06929A6753100991492 /* mapkit_and_fsq_places_api.entitlements */,
+				665CA06229A6752F00991492 /* mapkit_and_fsq_places_api.xcdatamodeld */,
+				665CA06A29A6753100991492 /* Preview Content */,
+			);
+			path = "mapkit-and-fsq-places-api";
+			sourceTree = "<group>";
+		};
+		665CA06A29A6753100991492 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				665CA06B29A6753100991492 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		665CA07429A6753100991492 /* mapkit-and-fsq-places-apiTests */ = {
+			isa = PBXGroup;
+			children = (
+				665CA07529A6753100991492 /* applewebkit_map_and_fsq_places_apiTests.swift */,
+			);
+			path = "mapkit-and-fsq-places-apiTests";
+			sourceTree = "<group>";
+		};
+		665CA07E29A6753100991492 /* mapkit-and-fsq-places-apiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				665CA07F29A6753100991492 /* applewebkit_map_and_fsq_places_apiUITests.swift */,
+				665CA08129A6753100991492 /* applewebkit_map_and_fsq_places_apiUITestsLaunchTests.swift */,
+			);
+			path = "mapkit-and-fsq-places-apiUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		665CA05A29A6752F00991492 /* mapkit-and-fsq-places-api */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 665CA08529A6753100991492 /* Build configuration list for PBXNativeTarget "mapkit-and-fsq-places-api" */;
+			buildPhases = (
+				665CA05729A6752F00991492 /* Sources */,
+				665CA05829A6752F00991492 /* Frameworks */,
+				665CA05929A6752F00991492 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "mapkit-and-fsq-places-api";
+			productName = "applewebkit-map-and-fsq-places-api";
+			productReference = 665CA05B29A6752F00991492 /* mapkit-and-fsq-places-api.app */;
+			productType = "com.apple.product-type.application";
+		};
+		665CA07029A6753100991492 /* mapkit-and-fsq-places-apiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 665CA08829A6753100991492 /* Build configuration list for PBXNativeTarget "mapkit-and-fsq-places-apiTests" */;
+			buildPhases = (
+				665CA06D29A6753100991492 /* Sources */,
+				665CA06E29A6753100991492 /* Frameworks */,
+				665CA06F29A6753100991492 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				665CA07329A6753100991492 /* PBXTargetDependency */,
+			);
+			name = "mapkit-and-fsq-places-apiTests";
+			productName = "applewebkit-map-and-fsq-places-apiTests";
+			productReference = 665CA07129A6753100991492 /* mapkit-and-fsq-places-apiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		665CA07A29A6753100991492 /* mapkit-and-fsq-places-apiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 665CA08B29A6753100991492 /* Build configuration list for PBXNativeTarget "mapkit-and-fsq-places-apiUITests" */;
+			buildPhases = (
+				665CA07729A6753100991492 /* Sources */,
+				665CA07829A6753100991492 /* Frameworks */,
+				665CA07929A6753100991492 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				665CA07D29A6753100991492 /* PBXTargetDependency */,
+			);
+			name = "mapkit-and-fsq-places-apiUITests";
+			productName = "applewebkit-map-and-fsq-places-apiUITests";
+			productReference = 665CA07B29A6753100991492 /* mapkit-and-fsq-places-apiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		665CA05329A6752F00991492 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					665CA05A29A6752F00991492 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					665CA07029A6753100991492 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 665CA05A29A6752F00991492;
+					};
+					665CA07A29A6753100991492 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 665CA05A29A6752F00991492;
+					};
+				};
+			};
+			buildConfigurationList = 665CA05629A6752F00991492 /* Build configuration list for PBXProject "mapkit-and-fsq-places-api" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 665CA05229A6752F00991492;
+			productRefGroup = 665CA05C29A6752F00991492 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				665CA05A29A6752F00991492 /* mapkit-and-fsq-places-api */,
+				665CA07029A6753100991492 /* mapkit-and-fsq-places-apiTests */,
+				665CA07A29A6753100991492 /* mapkit-and-fsq-places-apiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		665CA05929A6752F00991492 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				665CA06C29A6753100991492 /* Preview Assets.xcassets in Resources */,
+				665CA06829A6753100991492 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		665CA06F29A6753100991492 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		665CA07929A6753100991492 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		665CA05729A6752F00991492 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				665CA05F29A6752F00991492 /* mapkit_and_fsq_places_apiApp.swift in Sources */,
+				665CA06629A6752F00991492 /* ContentView.swift in Sources */,
+				662F3E6D29B7D3BC0028EBAD /* LocationManager.swift in Sources */,
+				66F71F7129AFC52600D55E1D /* Models.swift in Sources */,
+				66F71F6F29AFC4F400D55E1D /* Api.swift in Sources */,
+				665CA06429A6752F00991492 /* mapkit_and_fsq_places_api.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		665CA06D29A6753100991492 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				665CA07629A6753100991492 /* applewebkit_map_and_fsq_places_apiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		665CA07729A6753100991492 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				665CA08229A6753100991492 /* applewebkit_map_and_fsq_places_apiUITestsLaunchTests.swift in Sources */,
+				665CA08029A6753100991492 /* applewebkit_map_and_fsq_places_apiUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		665CA07329A6753100991492 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 665CA05A29A6752F00991492 /* mapkit-and-fsq-places-api */;
+			targetProxy = 665CA07229A6753100991492 /* PBXContainerItemProxy */;
+		};
+		665CA07D29A6753100991492 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 665CA05A29A6752F00991492 /* mapkit-and-fsq-places-api */;
+			targetProxy = 665CA07C29A6753100991492 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		665CA08329A6753100991492 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		665CA08429A6753100991492 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		665CA08629A6753100991492 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "mapkit-and-fsq-places-api/mapkit_and_fsq_places_api.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"mapkit-and-fsq-places-api/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "To show your location on map";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To show your location on map";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "foursquare.mapkit-and-fsq-places-api";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = "foursquare.mapkit-example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		665CA08729A6753100991492 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "mapkit-and-fsq-places-api/mapkit_and_fsq_places_api.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"mapkit-and-fsq-places-api/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "To show your location on map";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To show your location on map";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "foursquare.mapkit-and-fsq-places-api";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = "foursquare.mapkit-example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		665CA08929A6753100991492 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "foursquare.applewebkit-map-and-fsq-places-apiTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mapkit-and-fsq-places-api.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mapkit-and-fsq-places-api";
+			};
+			name = Debug;
+		};
+		665CA08A29A6753100991492 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "foursquare.applewebkit-map-and-fsq-places-apiTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mapkit-and-fsq-places-api.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mapkit-and-fsq-places-api";
+			};
+			name = Release;
+		};
+		665CA08C29A6753100991492 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "foursquare.applewebkit-map-and-fsq-places-apiUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "applewebkit-map-and-fsq-places-api";
+			};
+			name = Debug;
+		};
+		665CA08D29A6753100991492 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "foursquare.applewebkit-map-and-fsq-places-apiUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "applewebkit-map-and-fsq-places-api";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		665CA05629A6752F00991492 /* Build configuration list for PBXProject "mapkit-and-fsq-places-api" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				665CA08329A6753100991492 /* Debug */,
+				665CA08429A6753100991492 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		665CA08529A6753100991492 /* Build configuration list for PBXNativeTarget "mapkit-and-fsq-places-api" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				665CA08629A6753100991492 /* Debug */,
+				665CA08729A6753100991492 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		665CA08829A6753100991492 /* Build configuration list for PBXNativeTarget "mapkit-and-fsq-places-apiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				665CA08929A6753100991492 /* Debug */,
+				665CA08A29A6753100991492 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		665CA08B29A6753100991492 /* Build configuration list for PBXNativeTarget "mapkit-and-fsq-places-apiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				665CA08C29A6753100991492 /* Debug */,
+				665CA08D29A6753100991492 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		665CA06229A6752F00991492 /* mapkit_and_fsq_places_api.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				665CA06329A6752F00991492 /* applewebkit_map_and_fsq_places_api.xcdatamodel */,
+			);
+			currentVersion = 665CA06329A6752F00991492 /* applewebkit_map_and_fsq_places_api.xcdatamodel */;
+			path = mapkit_and_fsq_places_api.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 665CA05329A6752F00991492 /* Project object */;
+}
