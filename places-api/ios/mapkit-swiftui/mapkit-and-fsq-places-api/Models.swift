@@ -14,7 +14,7 @@ struct Place: Codable {
     let distance: Int
 }
 
-extension Place: Identifiable{
+extension Place: Identifiable {
     var id: String { fsq_id }
     var location: CLLocationCoordinate2D { CLLocationCoordinate2D(latitude: self.geocodes["main"]!.latitude, longitude: self.geocodes["main"]!.longitude) }
 }
